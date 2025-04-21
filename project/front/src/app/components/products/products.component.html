@@ -1,0 +1,18 @@
+<h2> Products</h2>
+<div class="row">
+    @for(prod of prodData; track prod._id)
+     {
+        <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+                <img src="http://localhost:8899/images/{{prod.imagePath}}" class="card-img-top" alt="..." width="200" height="150">
+                <div class="card-body">
+                  <h5 class="card-title">{{prod.pname|uppercase}}</h5>
+                  <p class="card-text">
+                    Price : {{prod.price}}
+                  </p>
+                  <button class="btn btn-primary" (click)="delPro(prod._id)">Delete</button>
+                </div>
+              </div>
+        </div>
+     }
+</div>

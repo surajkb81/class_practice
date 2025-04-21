@@ -1,0 +1,21 @@
+<h2> Jsonplaceholder User Details</h2>
+<table class="table">
+    <tbody>
+        <tr>
+            <th> Sl. No.</th>
+            <th> Name </th>
+            <th> Email</th>
+            <th> Phone</th>
+            <th> Website</th>
+        </tr>
+        @for(user of userData;track user.id; let ind=$index){
+            <tr>
+                <td>{{ind+1}}</td>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.phone}}</td>
+                <td>{{user.website}}</td>
+            </tr>
+        }
+    </tbody>
+</table>

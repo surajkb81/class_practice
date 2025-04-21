@@ -1,0 +1,8 @@
+<h2> Jsonplaceholder Posts</h2>
+@for(post of postData; track post.id){
+    <div>
+        <h4> {{post.title}}</h4>
+        <p> {{post.body}}</p>
+        <hr/>
+    </div>
+}

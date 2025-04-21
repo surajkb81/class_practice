@@ -1,0 +1,17 @@
+
+<p>home works!</p>
+
+<h2>{{titleHome }} </h2>
+
+<img [src]="imagePath" /> <br/>
+<button [disabled]="isActive"> Enable / Disable</button>
+<br/>
+Enter Name: <input type="text" [(ngModel)]="name"><br/>
+<button (click)="xyz()"> Click Here</button>
+<br/>
+<div *ngIf="courses.length>0 else xyzz"></div>
+	<h4>Courses</h4> <br/>
+    <ul>
+        <li *ngFor="let c of courses"> {{c}}</li>
+    </ul>
+	<ng-template #xyzz>no couse found </ng-template>

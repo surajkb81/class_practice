@@ -1,0 +1,28 @@
+{
+  "products": [
+    {
+      "name": "B1",
+      "price": "2231",
+      "quantity": "32",
+      "id": "2"
+    },
+    {
+      "id": "4",
+      "name": "D",
+      "price": 423,
+      "quantity": 2
+    },
+    {
+      "id": "86e2",
+      "name": "new Product",
+      "price": "500",
+      "quantity": "25"
+    },
+    {
+      "id": "e5b4",
+      "name": "Computer",
+      "price": "500000",
+      "quantity": "10"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+<h2 [ngStyle]="{'color':status?'red':'green'}"> Test componenent</h2>
+<p [ngClass]="{'text-success':status==true,'text-danger':status==false}"> Welcome {{name}}</p>
+<p>test works!</p>
+Enter Name: <input type="text" [(ngModel)]="name"><br>
+<button (click)="xyz()" class="btn btn-primary"> Click Here</button>
+<br/>
+@if(courses.length>0)
+{
+<div>
+    <h4> Courses</h4>
+    <ul>
+        @for(c of courses; track c){
+            <li> {{c}}</li>
+        }
+    </ul>
+</div>
+}
+@else 
+{
+ <p> No Course found</p>
+}

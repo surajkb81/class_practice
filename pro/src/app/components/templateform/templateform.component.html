@@ -1,0 +1,33 @@
+<h2> Template Form Validation</h2>
+<form #myFrm="ngForm" (ngSubmit)="formSubmit()">
+    <div class="form-group">
+        <label> Full Name</label>
+        <input type="text" name="fullName" class="form-control" [(ngModel)]="formData.fullName" required #fn="ngModel" pattern="[a-zA-Z ]{3,100}" />
+        <!-- error -->
+         <div *ngIf="fn.invalid && (fn.touched || fn.dirty)" class="alert alert-danger">
+            <div *ngIf="fn.errors?.['required']"> Full Name is required</div>
+            <div *ngIf="fn.errors?.['pattern']"> Only alphabate allowed and  minimun/ Max length is 3 to 100</div>
+         </div>
+    </div>
+    <div class="form-group">
+        <label> Email</label>
+        <input type="text" name="email" class="form-control" #em="ngModel" [(ngModel)]="formData.email" required pattern="[a-zA-Z0-9 @.]{5,50}"/>
+        <div *ngIf="em.invalid && (em.touched || em.dirty)" class="alert alert-danger">
+            <div *ngIf="em.errors?.['required']"> Email is required</div>
+            <div *ngIf="em.errors?.['pattern']"> email is required, minimum = 5 characters to 50 chars</div>
+         </div>
+    </div>
+    <div class="form-group">
+        <label> Password</label>
+        <input type="password" name="password" class="form-control" [(ngModel)]="formData.password" required/>
+    </div>
+    <div class="form-group">
+        <label> Mobile</label>
+        <input type="text" name="mobile" class="form-control" [(ngModel)]="formData.mobile" required #mob="ngModel" pattern="[6-9][0-9]{9}"/>
+        <div *ngIf="mob.invalid && (mob.touched || mob.dirty)" class="alert alert-danger">
+            <div *ngIf="mob.errors?.['required']"> Mobile is required</div>
+            <div *ngIf="mob.errors?.['pattern']"> 10 digit mobile number is allow start with [6-9]</div>
+         </div>
+    </div>
+    <input type="submit" value="Submit" class="btn btn-success" [disabled]="myFrm.invalid"/>
+</form>

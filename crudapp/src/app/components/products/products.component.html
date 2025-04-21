@@ -1,0 +1,19 @@
+<p>products works!</p>
+<h2>Latest Products</h2>
+<div class="row">
+<!-- @for(prod of productData | limitto:1; track prod.id){ -->
+@for(prod of productData ; track prod.id){
+    <div class="col-sm-4">
+        <div class="card" style="width: 18rem;">
+            
+            <div class="card-body">
+              <h5 class="card-title">{{prod.name}}</h5>
+              <p class="card-text">Price : Rs. {{prod.price}}  <br/> Quantity: {{prod.quantity}}</p>
+               <button class="btn btn-danger" (click)="delPro(prod.id)">Delete</button> 
+              <a [routerLink]="['/editpro',prod.id]" class="btn btn-primary"> Edit </a>
+              <button class="btn btn-success" (click)="addCart(prod)">Add Cart</button>
+              </div>
+          </div>
+    </div>
+}
+</div>
